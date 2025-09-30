@@ -15,4 +15,4 @@ class Triangle(Shape):
 
     def is_right(self) -> bool:
         sides = sorted([self.a, self.b, self.c])
-        return math.isclose(sides[0] ** 2 + sides[1] ** 2, sides[2] ** 2)
+        return sides[0] ** 2 + sides[1] ** 2, sides[2] ** 2
