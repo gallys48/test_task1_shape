@@ -1,25 +1,28 @@
 import math
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from shapes import Circle, Triangle
 
 def test_circle_area():
     c = Circle(1)
-    assert math.isclose(c.area(), math.pi)
+    assert c.area() == math.pi
 
 def test_circle_invalid():
     try:
         Circle(0)
-        assert False, "Должно выбрасывать ValueError"
+        assert False
     except ValueError:
         pass
 
 def test_triangle_area():
     t = Triangle(3, 4, 5)
-    assert math.isclose(t.area(), 6.0)
+    assert t.area() == 6.0
 
 def test_triangle_invalid():
     try:
         Triangle(1, 2, 3)
-        assert False, "Должно выбрасывать ValueError"
+        assert False
     except ValueError:
         pass
 
